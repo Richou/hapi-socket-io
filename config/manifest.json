@@ -1,0 +1,18 @@
+{
+    "server": {
+        "port": "3000"
+    },
+    "register": {
+        "plugins": [
+            {
+                "plugin": "blipp"
+            },
+            {
+                "plugin": "inert"
+            },
+            {
+                "plugin": "./controllers/Websocket"
+            }
+        ]
+    }
+}
