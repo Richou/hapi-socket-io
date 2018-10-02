@@ -11,6 +11,9 @@
                 "plugin": "inert"
             },
             {
+                "plugin": "./modules/Authentication"
+            },
+            {
                 "plugin": "../lib/hapi-io"
             },
             {
