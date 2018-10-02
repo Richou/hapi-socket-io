@@ -1,6 +1,6 @@
 {
     "server": {
-        "port": "3000"
+        "port": "4000"
     },
     "register": {
         "plugins": [
@@ -9,6 +9,9 @@
             },
             {
                 "plugin": "inert"
+            },
+            {
+                "plugin": "../lib/hapi-io"
             },
             {
                 "plugin": "./controllers/Websocket"

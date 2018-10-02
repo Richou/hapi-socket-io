@@ -2,10 +2,10 @@
 import Handlers from '../handlers/Handlers';
 
 exports.register = (server, options) => {
-    const io = require('socket.io')(server.listener);
+    const { io } = server.plugins['hapi-io'];
     const handler = new Handlers();
     io.on('connection', socket => {
-        console.log('new connection ', socket.id);
+        console.log('new connection ', socket.io);
         socket.on('hello', handler.helloWorld);
         socket.on('disconnect', () => {
             console.log('disconnected ', socket.id);
