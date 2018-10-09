@@ -11,13 +11,16 @@
                 "plugin": "inert"
             },
             {
-                "plugin": "./modules/Authentication"
+                "plugin": "./modules/authentication.module"
             },
             {
                 "plugin": "../lib/hapi-io"
             },
             {
-                "plugin": "./controllers/Websocket"
+                "plugin": "./controllers/websocket.controller"
+            },
+            {
+                "plugin": "./controllers/foo.controller"
             }
         ]
     }

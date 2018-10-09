@@ -14,7 +14,7 @@ exports.register = (server, options) => {
     server.auth.strategy('jwt', 'jwt',
     { key: 'blabla',          // Never Share your secret key, this one is shitty so I don't care
         validate: validate,
-        verifyOptions: { algorithms: [ 'HS256' ] }
+        verifyOptions: { algorithms: [ 'HS512' ] }
     });
 
     server.auth.default('jwt');

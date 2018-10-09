@@ -1,11 +1,15 @@
 'use strict';
-import Handlers from '../handlers/Handlers';
+import Handlers from '../handlers/handlers';
 
 exports.register = (server, options) => {
     const { io } = server.plugins['hapi-io'];
     const handler = new Handlers();
     io.on('connection', socket => {
         console.log('new connection ', socket.client.conn.id);
+        socket.broadcast.emit('values', 2)
+        socket.on('message', message => {
+            console.log("received message : ", message)
+        })
         socket.on('disconnect', () => {
             console.log('disconnected', socket.id);
         })

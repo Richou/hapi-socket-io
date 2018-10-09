@@ -1,0 +1,33 @@
+version: '3.6'
+services:
+  db:
+    image: postgres
+    container_name: hapi-postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=hapi
+      - POSTGRES_USER=hapi
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgresdata:/usr/share/postgres/data
+    networks: 
+      - default
+  portainer:
+    image: portainer/portainer
+    container_name: hapi-portainer
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainerdata:/data
+    ports:
+      - "10001:9000"
+networks:
+  default:
+    driver: bridge
+volumes:
+  postgresdata:
+    driver: local
+  portainerdata:
+    driver: local
